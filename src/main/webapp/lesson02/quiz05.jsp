@@ -19,10 +19,10 @@
 			<span>cm</span>
 		</div>
 		<div class= "mt-3">
-			<label for="inch">인치</label><input type="checkbox" id="inch" name="type" value="인치">
-		<label for="yard">야드</label><input type="checkbox" id="yard" name="type" value="야드">
-		<label for="feet">피트</label><input type="checkbox" id="feet" name="type" value="피트">
-		<label for="meter">미터</label><input type="checkbox" id="meter" name="type" value="미터">
+			<label for="inch">aa</label><input type="checkbox" id="inch" name="type" value="inch">
+		<label for="yard">bb</label><input type="checkbox" id="yard" name="type" value="yard">
+		<label for="feet">cc</label><input type="checkbox" id="feet" name="type" value="feet">
+		<label for="meter">dd</label><input type="checkbox" id="meter" name="type" value="meter">
 		</div>
 			
 			<input type="submit" class="btn btn-info mt-3" value="변환하기">
