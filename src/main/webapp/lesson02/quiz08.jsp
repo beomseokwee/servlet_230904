@@ -87,7 +87,7 @@ list.add(map);
 			<tr class="row">
 					<td class="col-1"><%= item.get("id") %></td>
 					<td class="col-2"><img src="<%= item.get("image")   %>" alt="표지" width="50"></td>
-					<td class="col-9"><a href="/lesson02/quiz08_1.jsp?id=<%=item.get("id") %>"><%= item.get("title") %></a></td>				
+					<td><a href="/lesson02/quiz08_1.jsp?id=<%=item.get("id") %>"><%= item.get("title") %></a></td>				
 				</tr>
 			
 			<%

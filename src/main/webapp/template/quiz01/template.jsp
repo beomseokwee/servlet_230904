@@ -17,9 +17,9 @@
 <style>
 header {height:80px;}
 nav {height:50px}
-.contents{min-height:500px;}
+.contents {min-height:500px;}
 footer{height:30px}
-section {font-size:20px; height:50px;}
+
 </style>
 <body>
 
@@ -63,8 +63,8 @@ section {font-size:20px; height:50px;}
     list.add(map);
     
 %>
-<div id="wrap" class= "container text-center">
-	<header class=" bg-sucess d-flex justify-content center align-item-center">
+<div id="wrap" class= "container bg-secondary">
+	<header class=" bg-sucess d-flex justify-content-center align-item-center">
 		<jsp:include page="header.jsp"></jsp:include>
 	</header>
 	<nav class="bg-danger d-flex align-item-center">
