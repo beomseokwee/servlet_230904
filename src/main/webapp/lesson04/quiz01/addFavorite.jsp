@@ -12,7 +12,7 @@
 <body>
 <div class= "container">
 			<h1>즐겨찾기 추가</h1>
-	<form method="post" action="/lesson04/add-favoite">
+	<form method="post" action="/lesson04/add">
 		<div class="align-items-end">
 		<span>사이트명: </span>
 			<input type = "text" class="form-control col-5"  name="name">

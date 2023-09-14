@@ -17,7 +17,7 @@
 	MysqlService ms = MysqlService.getInstance();
 	ms.connect();
 	// DB select
-	String selectQuery = "select `name`, `url` from `favorite_list`order by `id` desc ";
+	String selectQuery = "select * from `favorite_list`order by `id` desc ";
 	ResultSet res = ms.select(selectQuery);
 	
 %>
@@ -44,7 +44,7 @@
 				<tr>
 					<td><%=res.getString("name") %></td>
 					<td><a href="<%=res.getString("url")%>"><%=res.getString("url")%></a></td>
-					
+					<td><a href ="/lesson04/delete-favorite?id=<%=res.getInt("id")%>">삭제</a></td>
 				</tr>
 			
 			<%
