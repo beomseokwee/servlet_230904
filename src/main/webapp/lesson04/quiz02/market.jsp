@@ -10,26 +10,12 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 <title>HONG당무 마켓</title>
+
+
+<link rel="stylesheet" href="style.css" type="text/css">
 </head>
-<style>
 
 
-header {height:80px; background-color:#ff884c;}
-nav {height:40px; background-color:#ff884c;}
-.contents {min-height:550px; text-align:center;}
-footer {height:200px  ;}
-.contentBox{
-	width:100%;
-}
-.content{
-	width: 30%;
-	text-align:left;
-	display: block;
-	float :left;
-	margin-left:20px;
-}
-
-</style>
 <body>
 <%
 	// DB 연결
@@ -47,33 +33,47 @@ footer {height:200px  ;}
 	</div>
 </header>
 <nav>
-<div>
+<div class="d-flex justify-content-center">
 	<ul class="nav nav-fill w-100">
-		<li class="nav-item "><a href="#" class="nav-link  text-white font-weight-bold">리스트</a></li>
-		<li class="nav-item"><a href="#" class="nav-link  text-white font-weight-bold">물건 올리기</a></li>
-		<li class="nav-item"><a href="#" class="nav-link  text-white font-weight-bold">마이 페이지</a></li>
+		<li class="nav-item "><a href="/lesson04/quiz03/market.jsp" class="nav-link main-link">리스트</a></li>
+		<li class="nav-item"><a href="/lesson04/quiz03/market.jsp" class="nav-link main-link">물건 올리기</a></li>
+		<li class="nav-item"><a href="/lesson04/quiz03/market.jsp" class="nav-link main-link">마이 페이지</a></li>
 	</ul>
 	</div>
 </nav>
-<section class="contents">
-<%
-	while(res.next()) {
-%>
-<div class="contentBox">
-	
-	<div class="content mt-4 border border-success p-1">
-		<img src="<%=res.getString("pictureUrl")%>" alt="물품사진"  width="195" />
-		<div ><%=res.getString("title") %></div>
-		<div ><%=res.getInt("price") +"원"%></div>
-		<div ><%=res.getString("nickname") %></div>
+<section class="mt-4 d-flex justify-content-center">
+	<div class="d-flex flex-wrap ">
+
+		<%
+             while (res.next()) {
+        %>
+		<%-- goods-box가 상품 하나의 영역 --%>
+		<div class="goods-box mb-3 mr-2">
+			<div class="goods-image-box ">
+			
+				<%-- 이미지 없는 경우 --%>
+				<%	if (res.getString("pictureUrl") == null || res.getString("pictureUrl").equals("")) { %>
+				<div class="d-flex h-100 justify-content-center align-items-center">
+					<h4 class="text-secondary">이미지 없음</h4>
+				</div>
+				
+				<%-- 이미지 있는 경우 --%>
+				<%
+             		} else {
+				%>
+				<div class="goods-image-box">
+					<img class="w-100" src="<%= res.getString("pictureUrl") %>">
+				</div>             			
+             	<%	
+             		}
+				%>
+			</div>
+			<div class="title mt-1"><%= res.getString("title") %></div>
+			<div class="price mt-1"><%= res.getString("price") %>원</div>
+			<div class="seller mt-1"><%= res.getString("nickname") %></div>
+		</div>
+		<% 	} %>
 	</div>
-	
-</div>
-
-<%
-	} 
-
-%>
 </section>
 <footer class="text-center">
 
